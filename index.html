@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LankaBangla Finance PLC</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="bootstrap.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="swiper.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="bg-white py-3 border-bottom">
+        <div class="container-fluid header-grid">
+          <!-- Left: Logo + divider + text -->
+          <div class="d-flex align-items-center logo-section">
+            <a href="index.html" class="navbar-brand">
+              <img src="assets/logo/logo.png" alt="Logo" class="logo-img" />
+            </a>
+            <div class="brand-text-block">
+              <div class="vertical-lines"></div>
+              <div class="brand-text">
+                <div class="brand-top">Top Line Text</div>
+                <div class="brand-bottom">Bottom Line Text</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: Search bar -->
+          <div class="search-bar">
+            <input
+              type="search"
+              class="form-control modern-search"
+              placeholder="Search.."
+            />
+            <button class="search-btn" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+
+          <!-- Right: BO Account + Language toggle -->
+          <div class="d-flex align-items-center gap-3 right-controls">
+            <a
+              href="https://ibroker.lbsbd.com/Account/CreateBOAccount"
+              target="_blank"
+              class="btn custom-btn"
+            >
+              Open BO Account
+            </a>
+            <div class="lang-toggle">
+              <input type="checkbox" id="langSwitch" />
+              <label for="langSwitch" class="switch">
+                <span class="slider">
+                  <span class="lang-text en">EN</span>
+                  <span class="lang-text bn">BN</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="bg-light py-2 border-bottom">
+        <div class="container">
+          <ul class="nav justify-content-center custom-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+
+            <!-- About Us dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">About Us</a>
+              <div class="dropdown-float">
+                <a href="about-company.html" class="dropdown-box">Company</a>
+                <a href="about-team.html" class="dropdown-box">Team</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+              </div>
+            </li>
+
+            <!-- Services dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">Services</a>
+              <div class="dropdown-float">
+                <a href="service-loans.html" class="dropdown-box">Loans</a>
+                <a href="service-investments.html" class="dropdown-box"
+                  >Investments</a
+                >
+                <a href="service-advisory.html" class="dropdown-box"
+                  >Advisory</a
+                >
+                <a href="service-advisory.html" class="dropdown-box"
+                  >Advisory</a
+                >
+                <a href="service-advisory.html" class="dropdown-box"
+                  >Advisory</a
+                >
+              </div>
+            </li>
+
+            <!-- Investment Products dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">Investment Products</a>
+              <div class="dropdown-float">
+                <a href="product-bonds.html" class="dropdown-box">Bonds</a>
+                <a href="product-stocks.html" class="dropdown-box">Stocks</a>
+                <a href="product-mutual.html" class="dropdown-box"
+                  >Mutual Funds</a
+                >
+              </div>
+            </li>
+
+            <!-- Platforms dropdown with icons -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">Platforms</a>
+              <div class="dropdown-float platform-boxes">
+                <a href="index-2.html?platform=trade" class="dropdown-box">
+                  <img
+                    src="images/mobile.png"
+                    alt="TradeXpress"
+                    class="dropdown-icon"
+                  />
+                </a>
+                <a href="index-2.html?platform=reports" class="dropdown-box">
+                  <img
+                    src="images/web.png"
+                    alt="Reports"
+                    class="dropdown-icon"
+                  />
+                </a>
+                <a href="index-2.html?platform=ipo" class="dropdown-box">
+                  <img
+                    src="images/desktop.png"
+                    alt="IPO Tools"
+                    class="dropdown-icon"
+                  />
+                </a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Investor Relation</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Location</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Knowledge Basket</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Swiper -->
+    <section class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="assets/slider/warning for web.jpg" alt="Slide 1" />
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/slider/All-Products.jpg" alt="Slide 2" />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/slider/Capital market on mobile phone.jpg"
+            alt="Slide 3"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/slider/Tradeexpress web banner Revision 05.jpg"
+            alt="Slide 4"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/slider/financial-protal.jpg" alt="Slide 5" />
+        </div>
+      </div>
+      <!-- Pagination dots -->
+      <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- Highlight Boxes (separate section, visually attached) -->
+    <section class="highlight-boxes">
+      <div class="container">
+        <div class="row g-3 justify-content-between">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="float-box text-center">
+              <div class="box-title">28</div>
+              <div class="box-subtitle">Years of Trust</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="float-box text-center">
+              <div class="box-title">68484</div>
+              <div class="box-subtitle">HAppy Clients</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="float-box text-center">
+              <div class="box-title">47</div>
+              <div class="box-subtitle">Branches, Extensions and Booths</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="float-box text-center">
+              <div class="box-title">Top Title</div>
+              <div class="box-subtitle">Bottom Subtitle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Floaty Section -->
+    <section class="image-floaty-section py-5 text-center">
+      <div class="container">
+        <div class="section-label-top">Top Green Label</div>
+        <div class="section-label-bottom">Bottom Black Label</div>
+        <div class="row justify-content-center g-4 mt-4">
+          <!-- Float Box 1 -->
+          <div class="col-12 col-md-4">
+            <div class="float-box">
+              <div class="image-area">
+                <img
+                  src="assets/services-card-bg/Brokerage-Services.png"
+                  alt="Image 1"
+                />
+                <a href="https://example.com/link1" class="image-link">
+                  <span class="arrow">➜</span>
+                </a>
+              </div>
+              <div class="text-area">
+                <h1>Brokerage Services</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- Float Box 2 -->
+          <div class="col-12 col-md-4">
+            <div class="float-box">
+              <div class="image-area">
+                <img
+                  src="assets/services-card-bg/Margin-Loan-Facilities.png"
+                  alt="Image 2"
+                />
+                <a href="https://example.com/link2" class="image-link">
+                  <span class="arrow">➜</span>
+                </a>
+              </div>
+              <div class="text-area">
+                <h1>Margin Loan Facilities</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- Float Box 3 -->
+          <div class="col-12 col-md-4">
+            <div class="float-box">
+              <div class="image-area">
+                <img
+                  src="assets/services-card-bg/Investor-Relation-Services.png"
+                  alt="Image 3"
+                />
+                <a href="https://example.com/link3" class="image-link">
+                  <span class="arrow">➜</span>
+                </a>
+              </div>
+              <div class="text-area">
+                <h1>Investor Relation Services</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- Float Box 4 -->
+          <div class="col-12 col-md-4">
+            <div class="float-box">
+              <div class="image-area">
+                <img
+                  src="assets/services-card-bg/DP-Service.png"
+                  alt="Image 4"
+                />
+                <a href="https://example.com/link4" class="image-link">
+                  <span class="arrow">➜</span>
+                </a>
+              </div>
+              <div class="text-area">
+                <h1>DP Service</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- Float Box 5 -->
+          <div class="col-12 col-md-4">
+            <div class="float-box">
+              <div class="image-area">
+                <img
+                  src="assets/services-card-bg/Custodial-Services.png"
+                  alt="Image 5"
+                />
+                <a href="https://example.com/link5" class="image-link">
+                  <span class="arrow">➜</span>
+                </a>
+              </div>
+              <div class="text-area">
+                <h1>Custodial Services</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- innovation-coverflow -->
+
+    <section class="innovation-coverflow">
+      <div id="desktop-prod-swiper" class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="assets/logo/FP.png" alt="Logo 1" class="logo" />
+              <h2>Brokerage Services</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="assets/logo/iBroker-1.png" alt="Logo 2" class="logo" />
+              <h2>Margin Loan Facilities</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="assets/logo/TX.png" alt="Logo 3" class="logo" />
+              <h2>Investor Relation Services</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="assets/logo/FP.png" alt="Logo 4" class="logo" />
+              <h2>DP Service</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="assets/logo/iBroker-1.png" alt="Logo 5" class="logo" />
+              <h2>Custodial Services</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <img src="assets/logo/TX.png" alt="Logo 6" class="logo" />
+              <h2>Advisory</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Split Section -->
+    <section class="image-split-section py-5">
+      <div class="container text-center">
+        <div class="section-header">Section Header Label</div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 col-md-6">
+            <div class="float-box large-box h-100">
+              <img
+                height="165"
+                width="165"
+                src="assets/icons/knowledge-basket/Introduction of Capital Market.svg"
+                alt="Left Image"
+              />
+              <div style="border-top: 2px solid lightgrey; width: 80%"></div>
+              <div
+                class="fs-4 mt-3 inter-semibold text-center w-75"
+                style="color: ghostwhite"
+              >
+                Introduction of Capital Market
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 d-flex flex-column gap-3">
+            <div class="float-box small-box flex-fill">
+              <img
+                height="70"
+                width="70"
+                src="assets/icons/knowledge-basket/Mutual Fund.svg"
+                alt="Right Top Image"
+              />
+              <h2>Brokerage Services</h2>
+            </div>
+            <div class="float-box small-box flex-fill">
+              <img
+                height="70"
+                width="70"
+                src="assets/icons/knowledge-basket/technical analysis.svg"
+                alt="Right Bottom Image"
+              />
+              <h2>Brokerage Services</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Swiper -->
+    <section class="article-swiper-section py-3">
+      <div class="container text-center">
+        <!-- Section header -->
+        <div class="section-header mb-3">Latest Articles</div>
+
+        <!-- Buttons row -->
+        <div class="article-buttons mb-2">
+          <a href="https://example.com/orange-link" class="btn btn-orange me-2"
+            >Orange Button</a
+          >
+          <a href="https://example.com/green-link" class="btn btn-outline-green"
+            >Green Button</a
+          >
+        </div>
+
+        <!-- Label below buttons -->
+        <div class="article-label mb-3">
+          <p>Explore more insights and stories below</p>
+        </div>
+
+        <!-- Swiper container -->
+        <div class="swiper article-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article1.jpg"
+                      alt="Article 1"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 1
+                    </div>
+                    <a href="article1.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article2.jpg"
+                      alt="Article 2"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 2
+                    </div>
+                    <a href="article2.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article3.jpg"
+                      alt="Article 3"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 3
+                    </div>
+                    <a href="article3.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article4.jpg"
+                      alt="Article 4"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 4
+                    </div>
+                    <a href="article4.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article1.jpg"
+                      alt="Article 1"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 1
+                    </div>
+                    <a href="article1.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article2.jpg"
+                      alt="Article 2"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 2
+                    </div>
+                    <a href="article2.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article3.jpg"
+                      alt="Article 3"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 3
+                    </div>
+                    <a href="article3.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article4.jpg"
+                      alt="Article 4"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 4
+                    </div>
+                    <a href="article4.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article1.jpg"
+                      alt="Article 1"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 1
+                    </div>
+                    <a href="article1.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article2.jpg"
+                      alt="Article 2"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 2
+                    </div>
+                    <a href="article2.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article3.jpg"
+                      alt="Article 3"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 3
+                    </div>
+                    <a href="article3.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article4.jpg"
+                      alt="Article 4"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 4
+                    </div>
+                    <a href="article4.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article1.jpg"
+                      alt="Article 1"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 1
+                    </div>
+                    <a href="article1.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article2.jpg"
+                      alt="Article 2"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 2
+                    </div>
+                    <a href="article2.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article3.jpg"
+                      alt="Article 3"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 3
+                    </div>
+                    <a href="article3.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article4.jpg"
+                      alt="Article 4"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 4
+                    </div>
+                    <a href="article4.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article1.jpg"
+                      alt="Article 1"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 1
+                    </div>
+                    <a href="article1.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article2.jpg"
+                      alt="Article 2"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 2
+                    </div>
+                    <a href="article2.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article3.jpg"
+                      alt="Article 3"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 3
+                    </div>
+                    <a href="article3.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article4.jpg"
+                      alt="Article 4"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 4
+                    </div>
+                    <a href="article4.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article1.jpg"
+                      alt="Article 1"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 1
+                    </div>
+                    <a href="article1.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article2.jpg"
+                      alt="Article 2"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 2
+                    </div>
+                    <a href="article2.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article3.jpg"
+                      alt="Article 3"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 3
+                    </div>
+                    <a href="article3.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="float-box article-box">
+                    <img
+                      src="images/article4.jpg"
+                      alt="Article 4"
+                      class="img-fluid"
+                    />
+                    <div class="article-text">
+                      Short description of article 4
+                    </div>
+                    <a href="article4.html" class="read-more">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Icon Bar -->
+    <div class="floating-icon-bar">
+      <div class="icon-box">
+        <img src="images/home.png" alt="Home" class="icon-img" />
+        <span class="icon-label">Home</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/search.png" alt="Search" class="icon-img" />
+        <span class="icon-label">Search</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/profile.png" alt="Profile" class="icon-img" />
+        <span class="icon-label">Profile</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/settings.png" alt="Settings" class="icon-img" />
+        <span class="icon-label">Settings</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/settings.png" alt="Settings" class="icon-img" />
+        <span class="icon-label">Settings</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/settings.png" alt="Settings" class="icon-img" />
+        <span class="icon-label">Settings</span>
+      </div>
+    </div>
+
+    <!-- final section -->
+    <section class="final-contact-section py-5">
+      <div class="container text-center">
+        <div class="section-header mb-4">How can we help you?</div>
+        <p class="section-subtitle mb-5">
+          Fill out the form and we'll be in touch soon!
+        </p>
+
+        <div class="row g-4">
+          <!-- Left Contact Form (taller) -->
+          <div class="col-12 col-lg-6">
+            <form class="contact-form h-100">
+              <input
+                type="text"
+                class="form-control mb-3"
+                placeholder="Your Name"
+              />
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="Your email address"
+              />
+              <input
+                type="tel"
+                class="form-control mb-3"
+                placeholder="Your mobile number"
+              />
+              <textarea
+                class="form-control mb-3"
+                rows="4"
+                placeholder="Your message"
+              ></textarea>
+              <div class="recaptcha-box mb-3">
+                <input type="checkbox" id="notRobot" />
+                <label for="notRobot">I'm not a robot</label>
+              </div>
+              <button type="submit" class="btn btn-success w-100">
+                Submit
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Info Boxes (smaller, centered content) -->
+          <div
+            class="col-12 col-lg-6 d-flex flex-column justify-content-between"
+          >
+            <div
+              class="contact-info small-box d-flex align-items-center justify-content-center mb-4"
+            >
+              <div>
+                <h5>Address</h5>
+                <p>
+                  City Centre (13th Floor)<br />90/1 Motijheel, Dhaka - 1000
+                </p>
+              </div>
+            </div>
+            <div
+              class="contact-info small-box d-flex align-items-center justify-content-center"
+            >
+              <div>
+                <h5>E-mail Us</h5>
+                <p><a href="mailto:contact@lbsbd.com">contact@lbsbd.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Important Links -->
+        <section class="important-links mt-5 text-center">
+          <div class="section-header mb-3">Important Links</div>
+
+          <!-- Orange Floaty Boxes Grid -->
+          <div class="orange-floaty-grid">
+            <!-- Box 1 -->
+            <a href="https://example.com/link1" class="orange-box-link">
+              <div class="orange-float-box">
+                <img src="images/custom1.jpg" alt="Custom 1" />
+              </div>
+            </a>
+
+            <!-- Box 2 -->
+            <a href="https://example.com/link2" class="orange-box-link">
+              <div class="orange-float-box">
+                <img src="images/custom2.jpg" alt="Custom 2" />
+              </div>
+            </a>
+
+            <!-- Box 3 -->
+            <a href="https://example.com/link3" class="orange-box-link">
+              <div class="orange-float-box">
+                <img src="images/custom3.jpg" alt="Custom 3" />
+              </div>
+            </a>
+
+            <!-- Box 4 -->
+            <a href="https://example.com/link4" class="orange-box-link">
+              <div class="orange-float-box">
+                <img src="images/custom4.jpg" alt="Custom 4" />
+              </div>
+            </a>
+
+            <!-- Box 5 -->
+            <a href="https://example.com/link5" class="orange-box-link">
+              <div class="orange-float-box">
+                <img src="images/custom5.jpg" alt="Custom 5" />
+              </div>
+            </a>
+
+            <!-- Box 6 -->
+            <a href="https://example.com/link6" class="orange-box-link">
+              <div class="orange-float-box">
+                <img src="images/custom6.jpg" alt="Custom 6" />
+              </div>
+            </a>
+
+            <!-- Box 7 -->
+            <a href="https://example.com/link7" class="orange-box-link">
+              <div class="orange-float-box">
+                <img src="images/custom7.jpg" alt="Custom 7" />
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div
+        class="container d-flex justify-content-between align-items-center flex-wrap"
+      >
+        <!-- LEFT: Follow Us -->
+        <div class="follow-us">
+          <div class="follow-title mb-2">Follow Us</div>
+          <div class="social-icons d-flex gap-3">
+            <a href="https://facebook.com" target="_blank" class="social-link">
+              <img
+                src="images/facebook.png"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-link">
+              <img
+                src="images/instagram.png"
+                alt="Instagram"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://x.com" target="_blank" class="social-link">
+              <img src="images/x.png" alt="X" class="social-icon" />
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Info nav -->
+        <div class="d-flex align-items-center flex-wrap gap-3">
+          <a
+            href="https://example.com/one"
+            class="info-item text-center text-decoration-none"
+          >
+            <img src="images/icon1.png" alt="Icon 1" class="info-icon mb-2" />
+            <div class="info-name">Name One</div>
+          </a>
+          <div class="info-divider"></div>
+          <a
+            href="https://example.com/two"
+            class="info-item text-center text-decoration-none"
+          >
+            <img src="images/icon2.png" alt="Icon 2" class="info-icon mb-2" />
+            <div class="info-name">Name Two</div>
+          </a>
+          <div class="info-divider"></div>
+          <a
+            href="https://example.com/three"
+            class="info-item text-center text-decoration-none"
+          >
+            <img src="images/icon3.png" alt="Icon 3" class="info-icon mb-2" />
+            <div class="info-name">Name Three</div>
+          </a>
+          <div class="info-divider"></div>
+          <a
+            href="https://example.com/four"
+            class="info-item text-center text-decoration-none"
+          >
+            <img src="images/icon4.png" alt="Icon 4" class="info-icon mb-2" />
+            <div class="info-name">Name Four</div>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="bootstrap.js"></script>
+    <script src="swiper.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

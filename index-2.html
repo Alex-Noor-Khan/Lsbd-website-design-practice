@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LankaBangla Finance PLC</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="bootstrap.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="swiper.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="bg-white py-3 border-bottom">
+        <div class="container-fluid header-grid">
+          <!-- Left: Logo + divider + text -->
+          <div class="d-flex align-items-center logo-section">
+            <a href="index.html" class="navbar-brand">
+              <img src="assets/logo/logo.png" alt="Logo" class="logo-img" />
+            </a>
+            <div class="brand-text-block">
+              <div class="vertical-lines"></div>
+              <div class="brand-text">
+                <div class="brand-top">Top Line Text</div>
+                <div class="brand-bottom">Bottom Line Text</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: Search bar -->
+          <div class="search-bar">
+            <input
+              type="search"
+              class="form-control modern-search"
+              placeholder="Search.."
+            />
+            <button class="search-btn" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+
+          <!-- Right: BO Account + Language toggle -->
+          <div class="d-flex align-items-center gap-3 right-controls">
+            <a
+              href="https://ibroker.lbsbd.com/Account/CreateBOAccount"
+              target="_blank"
+              class="btn custom-btn"
+            >
+              Open BO Account
+            </a>
+            <div class="lang-toggle">
+              <input type="checkbox" id="langSwitch" />
+              <label for="langSwitch" class="switch">
+                <span class="slider">
+                  <span class="lang-text en">EN</span>
+                  <span class="lang-text bn">BN</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="bg-light py-2 border-bottom">
+        <div class="container">
+          <ul class="nav justify-content-center custom-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/index.html"
+                >Home</a
+              >
+            </li>
+
+            <!-- About Us dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">About Us</a>
+              <div class="dropdown-float">
+                <a href="about-company.html" class="dropdown-box">Company</a>
+                <a href="about-team.html" class="dropdown-box">Team</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-history.html" class="dropdown-box">History</a>
+              </div>
+            </li>
+
+            <!-- Services dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">Services</a>
+              <div class="dropdown-float">
+                <a href="service-loans.html" class="dropdown-box">Loans</a>
+                <a href="service-investments.html" class="dropdown-box"
+                  >Investments</a
+                >
+                <a href="service-advisory.html" class="dropdown-box"
+                  >Advisory</a
+                >
+                <a href="service-advisory.html" class="dropdown-box"
+                  >Advisory</a
+                >
+                <a href="service-advisory.html" class="dropdown-box"
+                  >Advisory</a
+                >
+              </div>
+            </li>
+
+            <!-- Investment Products dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">Investment Products</a>
+              <div class="dropdown-float">
+                <a href="product-bonds.html" class="dropdown-box">Bonds</a>
+                <a href="product-stocks.html" class="dropdown-box">Stocks</a>
+                <a href="product-mutual.html" class="dropdown-box"
+                  >Mutual Funds</a
+                >
+              </div>
+            </li>
+
+            <!-- Platforms dropdown with icons -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">Platforms</a>
+              <div class="dropdown-float platform-boxes">
+                <a href="index-2.html?platform=trade" class="dropdown-box">
+                  <img
+                    src="images/mobile.png"
+                    alt="TradeXpress"
+                    class="dropdown-icon"
+                  />
+                </a>
+                <a href="index-2.html?platform=reports" class="dropdown-box">
+                  <img
+                    src="images/web.png"
+                    alt="Reports"
+                    class="dropdown-icon"
+                  />
+                </a>
+                <a href="index-2.html?platform=ipo" class="dropdown-box">
+                  <img
+                    src="images/desktop.png"
+                    alt="IPO Tools"
+                    class="dropdown-icon"
+                  />
+                </a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Investor Relation</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Location</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Knowledge Basket</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+      <img
+        src="images/banner-placeholder.jpg"
+        alt="Banner"
+        class="banner-img"
+      />
+    </div>
+
+    <!-- Platform Section -->
+    <div class="platform-layout">
+      <!-- Left Column -->
+      <div class="left-column">
+        <div class="platform-selector">
+          <button
+            class="platform-toggle"
+            aria-expanded="false"
+            aria-controls="platformDropdownUp"
+          >
+            <span class="platform-label">Select Platform</span>
+            <i class="bi bi-chevron-up"></i>
+          </button>
+
+          <div class="dropdown-up" id="platformDropdownUp" role="menu">
+            <button class="dropdown-box" data-menu="trade" type="button">
+              <img
+                src="images/mobile.png"
+                alt="TradeXpress"
+                class="dropdown-icon"
+              />
+            </button>
+            <button class="dropdown-box" data-menu="reports" type="button">
+              <img src="images/web.png" alt="Reports" class="dropdown-icon" />
+            </button>
+            <button class="dropdown-box" data-menu="ipo" type="button">
+              <img
+                src="images/desktop.png"
+                alt="IPO Tools"
+                class="dropdown-icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-buttons" id="menuButtons"></div>
+      </div>
+
+      <!-- Right Visual Zone -->
+      <div class="right-visuals">
+        <div id="explanation-circle" class="visual-placeholder">
+          Upload your explanation diagram here
+        </div>
+        <div id="phone-visual" class="visual-placeholder">
+          Upload your phone mockup here
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Icon Bar -->
+    <div class="floating-icon-bar">
+      <div class="icon-box">
+        <img src="images/home.png" alt="Home" class="icon-img" />
+        <span class="icon-label">Home</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/search.png" alt="Search" class="icon-img" />
+        <span class="icon-label">Search</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/profile.png" alt="Profile" class="icon-img" />
+        <span class="icon-label">Profile</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/settings.png" alt="Settings" class="icon-img" />
+        <span class="icon-label">Settings</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/settings.png" alt="Settings" class="icon-img" />
+        <span class="icon-label">Settings</span>
+      </div>
+      <div class="icon-box">
+        <img src="images/settings.png" alt="Settings" class="icon-img" />
+        <span class="icon-label">Settings</span>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="bootstrap.js"></script>
+    <script src="swiper.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
