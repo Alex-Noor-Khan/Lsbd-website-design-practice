@@ -159,10 +159,10 @@ function initProdDeskSwiper() {
       effect: "coverflow",
       centeredSlides: true,
       loop: true,
-      slidesPerView: "auto",
-      initialSlide: 2,
+      slidesPerView: 4, // fixed number instead of "auto"
       speed: 1200,
-      loopedSlides: 6, // balance duplication
+      loopedSlides: 6, // oversupply clones
+
       coverflowEffect: {
         rotate: 20,
         stretch: 0,
