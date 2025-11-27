@@ -686,7 +686,7 @@ section {
   margin: 0;
 }
 
-/* --- Article Swiper --- */
+/* --- Article Swiper Button Styles --- */
 .btn-orange {
   background: #ffa94d;
   color: #fff;
@@ -717,24 +717,25 @@ section {
   border: 2px solid #198754;
 }
 
+/* --- Article Swiper Layout & Fixes --- */
 .article-swiper-section {
   padding: 16px 0 100px; /* breathing room */
   position: relative;
 }
-.article-swiper .swiper-slide {
-  flex-shrink: 0 !important;
-  flex-grow: 0 !important;
-  width: 100% !important;
+
+/* FIX: Ensure the wrapper uses flex for horizontal alignment (critical for 3-in-a-row) */
+.article-swiper .swiper-wrapper {
   display: flex;
-  justify-content: center;
-}
-.article-swiper .swiper-slide .row {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  justify-content: center;
 }
 
+/* FIX: Correct the slide width issue (removed the conflicting width: 100% !important) */
+.article-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+/* --- Article Box Styling --- */
 .float-box.article-box {
   background: #fff;
   border-radius: 8px;
@@ -774,6 +775,7 @@ section {
   color: #ff7f00;
 }
 
+/* --- Pagination Styling --- */
 .article-swiper .swiper-pagination {
   position: static;
   margin-top: 15px;
@@ -798,27 +800,36 @@ section {
   gap: 6px;
   z-index: 999;
 }
-.icon-box {
+
+/* Make anchors behave like your original boxes */
+.floating-icon-bar .icon-box {
   background: #fff;
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 24px;
+  padding: 6px; /* small internal space without forcing width/height */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none; /* prevent underline on <a> */
+  color: inherit; /* keep text colors consistent */
 }
-.icon-box:hover {
+
+.floating-icon-bar .icon-box:hover {
   background: #e6f5e6;
   transform: translateX(-5px);
 }
-.icon-img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+
+/* Icon image sizing (no forced object-fit that can cause artifacts) */
+.floating-icon-bar .icon-img {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
-.icon-label {
+
+/* Hover label (unchanged behavior) */
+.floating-icon-bar .icon-label {
   position: absolute;
   right: 100%;
   margin-right: 8px;
@@ -827,11 +838,59 @@ section {
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
+  white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
 }
-.icon-box:hover .icon-label {
+
+.floating-icon-bar .icon-box:hover .icon-label {
   opacity: 1;
+}
+
+/* --- Dropdown for last icon --- */
+.floating-icon-bar .has-dropdown {
+  position: relative;
+}
+
+/* Dropdown box styling */
+.floating-icon-bar .icon-dropdown {
+  position: absolute;
+  top: 50%;
+  right: 110%; /* appears to the left of the icon */
+  transform: translateY(-50%);
+  background: #000; /* black background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  min-width: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+/* Show on hover */
+.floating-icon-bar .has-dropdown:hover .icon-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Dropdown links */
+.floating-icon-bar .icon-dropdown a {
+  font-size: 0.85rem;
+  color: #fff; /* white text */
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+/* Hover effect for links */
+.floating-icon-bar .icon-dropdown a:hover {
+  background: #333; /* dark grey highlight on hover */
 }
 
 /* ===========================
@@ -988,17 +1047,47 @@ section {
   width: 24px;
   height: 24px;
 }
+
+/* FIX 1: Make follow-us section take full height and center its content */
+.site-footer .follow-us {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- Info Icon Sizing and Layout Fixes --- */
 .site-footer .info-item {
   color: #333;
   transition: color 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
 }
 .site-footer .info-item:hover {
   color: green;
 }
+.site-footer .info-icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+.site-footer .info-name {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+/* FIX 2: Correct the divider's vertical alignment */
 .site-footer .info-divider {
   width: 1px;
-  height: 24px;
+  height: 20px;
   background: #999;
+  /* This value aligns the short line with the bottom text, correcting the centering */
+  transform: translateY(50px);
 }
 
 /* ===========================

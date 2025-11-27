@@ -185,7 +185,38 @@ function initArticleSwiper() {
   if (document.querySelector(".article-swiper")) {
     new Swiper(".article-swiper", {
       loop: false,
-      pagination: { el: ".article-swiper .swiper-pagination", clickable: true },
+
+      // Default (Desktop): Show 3 slides, move 1 slide per action
+      slidesPerView: 3,
+      slidesPerGroup: 1, // <<< THIS ENSURES ONLY ONE SLIDE MOVES PER PAGINATION CLICK
+      spaceBetween: 24,
+
+      // Responsive settings for different screen sizes
+      breakpoints: {
+        // 0px and up (mobile)
+        0: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+        // 768px and up (tablet)
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 20,
+        },
+        // 1024px and up (desktop)
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 1,
+          spaceBetween: 24,
+        },
+      },
+
+      pagination: {
+        el: ".article-swiper .swiper-pagination",
+        clickable: true,
+      },
     });
   }
 }
