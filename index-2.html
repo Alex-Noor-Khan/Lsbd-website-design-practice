@@ -30,26 +30,34 @@
             <div class="brand-text-block">
               <div class="vertical-lines"></div>
               <div class="brand-text">
-                <div class="brand-top">Top Line Text</div>
-                <div class="brand-bottom">Bottom Line Text</div>
+                <div class="brand-top">ISO Certified</div>
+                <div class="brand-bottom">9001-2015</div>
               </div>
             </div>
           </div>
 
-          <!-- Center: Search bar -->
-          <div class="search-bar">
+         <!-- Center: Search bar - UPDATED STRUCTURE FOR SEAMLESS STYLING -->
+          <div class="search-composite">
+            <!-- Location Icon (LEFT SIDE) -->
+            <a href="[Your_Location_Link_Here]" class="search-icon-left" title="Location">
+                <i class="bi bi-geo-alt-fill"></i>
+            </a>
+
+            <!-- Input Field (MIDDLE) -->
             <input
               type="search"
-              class="form-control modern-search"
+              class="form-control search-input-middle"
               placeholder="Search.."
             />
-            <button class="search-btn" type="button">
+
+            <!-- Search Button (RIGHT SIDE) -->
+            <button class="search-icon-right" type="button" title="Search">
               <i class="bi bi-search"></i>
             </button>
           </div>
 
           <!-- Right: BO Account + Language toggle -->
-          <div class="d-flex align-items-center gap-3 right-controls">
+          <div class="d-flex align-items-center gap-3">
             <a
               href="https://ibroker.lbsbd.com/Account/CreateBOAccount"
               target="_blank"
@@ -74,24 +82,24 @@
       <nav class="bg-light py-2 border-bottom">
         <div class="container">
           <ul class="nav justify-content-center custom-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:5500/index.html"
-                >Home</a
-              >
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
 
             <!-- About Us dropdown -->
             <li class="nav-item dropdown">
               <a class="nav-link" href="#">About Us</a>
               <div class="dropdown-float">
-                <a href="about-company.html" class="dropdown-box">Company</a>
-                <a href="about-team.html" class="dropdown-box">Team</a>
-                <a href="about-history.html" class="dropdown-box">History</a>
-                <a href="about-history.html" class="dropdown-box">History</a>
-                <a href="about-history.html" class="dropdown-box">History</a>
-                <a href="about-history.html" class="dropdown-box">History</a>
-                <a href="about-history.html" class="dropdown-box">History</a>
-                <a href="about-history.html" class="dropdown-box">History</a>
+                <a href="about-company.html" class="dropdown-box"
+                  >Company Profile</a
+                >
+                <a href="about-team.html" class="dropdown-box">Vision</a>
+                <a href="about-history.html" class="dropdown-box">Mission</a>
+                <a href="about-history.html" class="dropdown-box">Value</a>
+                <a href="about-history.html" class="dropdown-box">Strategy</a>
+                <a href="about-history.html" class="dropdown-box"
+                  >Acheivements</a
+                >
+                <a href="about-history.html" class="dropdown-box">Board</a>
+                <a href="about-history.html" class="dropdown-box">Mancom</a>
               </div>
             </li>
 
@@ -99,18 +107,20 @@
             <li class="nav-item dropdown">
               <a class="nav-link" href="#">Services</a>
               <div class="dropdown-float">
-                <a href="service-loans.html" class="dropdown-box">Loans</a>
+                <a href="service-loans.html" class="dropdown-box"
+                  >Brokerage-Services</a
+                >
                 <a href="service-investments.html" class="dropdown-box"
-                  >Investments</a
+                  >Margin-Loan-Facilities</a
                 >
                 <a href="service-advisory.html" class="dropdown-box"
-                  >Advisory</a
+                  >Investor</a
                 >
                 <a href="service-advisory.html" class="dropdown-box"
-                  >Advisory</a
+                  >DP Service</a
                 >
                 <a href="service-advisory.html" class="dropdown-box"
-                  >Advisory</a
+                  >Foreign trade</a
                 >
               </div>
             </li>
@@ -133,21 +143,21 @@
               <div class="dropdown-float platform-boxes">
                 <a href="index-2.html?platform=trade" class="dropdown-box">
                   <img
-                    src="images/mobile.png"
+                    src="assets/logo/iBroker-1.png"
                     alt="TradeXpress"
                     class="dropdown-icon"
                   />
                 </a>
                 <a href="index-2.html?platform=reports" class="dropdown-box">
                   <img
-                    src="images/web.png"
+                    src="assets/logo/TX.png"
                     alt="Reports"
                     class="dropdown-icon"
                   />
                 </a>
                 <a href="index-2.html?platform=ipo" class="dropdown-box">
                   <img
-                    src="images/desktop.png"
+                    src="assets/logo/fp-1.png"
                     alt="IPO Tools"
                     class="dropdown-icon"
                   />
@@ -167,6 +177,7 @@
         </div>
       </nav>
     </header>
+
 
     <!-- Banner -->
     <div class="banner">
@@ -194,17 +205,17 @@
           <div class="dropdown-up" id="platformDropdownUp" role="menu">
             <button class="dropdown-box" data-menu="trade" type="button">
               <img
-                src="images/mobile.png"
+                src="assets/logo/iBroker-1.png"
                 alt="TradeXpress"
                 class="dropdown-icon"
               />
             </button>
             <button class="dropdown-box" data-menu="reports" type="button">
-              <img src="images/web.png" alt="Reports" class="dropdown-icon" />
+              <img src="assets/logo/TX.png" alt="Reports" class="dropdown-icon" />
             </button>
             <button class="dropdown-box" data-menu="ipo" type="button">
               <img
-                src="images/desktop.png"
+                src="assets/logo/fp-1.png"
                 alt="IPO Tools"
                 class="dropdown-icon"
               />
@@ -228,29 +239,69 @@
 
     <!-- Floating Icon Bar -->
     <div class="floating-icon-bar">
-      <div class="icon-box">
-        <img src="images/home.png" alt="Home" class="icon-img" />
-        <span class="icon-label">Home</span>
-      </div>
-      <div class="icon-box">
-        <img src="images/search.png" alt="Search" class="icon-img" />
-        <span class="icon-label">Search</span>
-      </div>
-      <div class="icon-box">
-        <img src="images/profile.png" alt="Profile" class="icon-img" />
-        <span class="icon-label">Profile</span>
-      </div>
-      <div class="icon-box">
-        <img src="images/settings.png" alt="Settings" class="icon-img" />
-        <span class="icon-label">Settings</span>
-      </div>
-      <div class="icon-box">
-        <img src="images/settings.png" alt="Settings" class="icon-img" />
-        <span class="icon-label">Settings</span>
-      </div>
-      <div class="icon-box">
-        <img src="images/settings.png" alt="Settings" class="icon-img" />
-        <span class="icon-label">Settings</span>
+      <!-- Icon 1 -->
+      <a href="customer-experience.html" class="icon-box">
+        <img
+          src="assets/icons/icons-v6/Phone.svg"
+          alt="Customer Experience"
+          class="icon-img"
+        />
+        <span class="icon-label">Customer Experience</span>
+      </a>
+
+      <!-- Icon 2 -->
+      <a href="latest-news.html" class="icon-box">
+        <img
+          src="assets/icons/icons-v6/News.svg"
+          alt="Latest News"
+          class="icon-img"
+        />
+        <span class="icon-label">Latest News</span>
+      </a>
+
+      <!-- Icon 3 -->
+      <a href="downloads.html" class="icon-box">
+        <img
+          src="assets/icons/icons-v6/Download.svg"
+          alt="Download"
+          class="icon-img"
+        />
+        <span class="icon-label">Download</span>
+      </a>
+
+      <!-- Icon 4 -->
+      <a href="tax-calculator.html" class="icon-box">
+        <img
+          src="assets/icons/icons-v6/Calculator.svg"
+          alt="Tax Calculator"
+          class="icon-img"
+        />
+        <span class="icon-label">Tax Calculator</span>
+      </a>
+
+      <!-- Icon 5 -->
+      <a href="faqs.html" class="icon-box">
+        <img src="assets/icons/icons-v6/FAQ.svg" alt="FAQs" class="icon-img" />
+        <span class="icon-label">FAQs</span>
+      </a>
+
+      <!-- Icon 6: Hover dropdown only -->
+      <div class="icon-box has-dropdown">
+        <img
+          src="assets/icons/icons-v6/sitemap.svg"
+          alt="Sitemap"
+          class="icon-img"
+        />
+        <span class="icon-label">Still work in progress</span>
+
+        <div class="icon-dropdown">
+          <a href="overview.html">Overview</a>
+          <a href="team.html">Team</a>
+          <a href="strategy.html">Strategy</a>
+          <a href="reports.html">Reports</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
     </div>
 

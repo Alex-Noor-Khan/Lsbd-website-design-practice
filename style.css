@@ -87,84 +87,113 @@ section {
 }
 
 /* ===========================
-   Modern Borderless Search Bar
+   1. Search Bar Wrapper (The seamless container)
+   Applies the border, rounding, and green color scheme globally.
 =========================== */
-.search-bar {
+.search-composite {
+  /* Flexbox for layout */
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 420px;
-  background: #f8fdf8; /* soft green-tinted background */
+
+  /* Continuous Styling */
+  border: 2px solid #198754; /* Green border for the entire component */
   border-radius: 50px;
-  padding: 6px 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #fff; /* Ensure white background */
+  overflow: hidden; /* Important for containing inner elements */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+
+  /* Hover effect for the entire bar */
+  transition: border-color 0.3s ease;
 }
 
-/* Input field */
-.modern-search {
-  flex: 1;
-  border: none; /* borderless */
-  background: transparent; /* blends with container */
-  padding: 10px 16px;
-  font-size: 0.95rem;
-  color: #198754; /* green text */
-}
-.modern-search::placeholder {
-  color: #198754;
-  opacity: 0.6;
-}
-.modern-search:focus {
-  outline: none;
-}
-
-/* Circular search button */
-.search-btn {
-  background: #198754; /* green circle */
-  border: none;
-  border-radius: 50%; /* perfect circle */
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.search-btn i {
-  color: #fff; /* white icon */
-  font-size: 1.2rem;
-}
-.search-btn:hover {
-  background: #ffa94d; /* orange hover */
-  transform: scale(1.05); /* subtle grow */
+.search-composite:hover {
+  border-color: #ffa94d; /* Orange border on hover */
 }
 
 /* ===========================
-   Custom Search + Icon
+   2. Location Icon (Left Piece)
+   Integrates into the bar without its own border.
 =========================== */
-.custom-search {
-  border: 2px solid green;
-  color: green;
-  border-radius: 50px 0 0 50px;
-  padding-left: 16px;
-}
-.custom-search::placeholder {
-  color: green;
-}
-.custom-icon {
-  border: 2px solid green;
-  border-left: none;
-  border-radius: 0 50px 50px 0;
-  background: #fff;
-  padding: 0 12px;
-  color: green;
-  cursor: pointer;
+.search-icon-left {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevents squishing */
+  width: 44px; /* Fixed width */
+  height: 44px; /* Fixed height */
+  padding: 0 10px;
+
+  /* Icon Color */
+  color: #198754; /* Green icon color */
+  font-size: 1.2rem;
+  text-decoration: none;
+  background: transparent;
+
+  /* Custom Hover effect: Orange highlight + float */
   transition: all 0.3s ease;
 }
-.custom-icon:hover {
-  background: #ffa94d;
-  color: #fff;
-  border-color: #ffa94d;
+
+.search-icon-left:hover {
+  color: #ffa94d; /* Orange color on hover */
+  transform: translateY(-2px); /* Float/lift effect */
+}
+
+
+/* ===========================
+   3. Search Input (Middle Piece)
+   Must be borderless and expand to fill the available space.
+=========================== */
+.search-input-middle {
+  flex-grow: 1;
+  /* CRUCIAL: Remove all inherited borders/styles */
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent;
+  
+  padding: 10px 0; /* Adjusted padding to line up with icons */
+  font-size: 0.95rem;
+  color: #198754;
+}
+
+.search-input-middle::placeholder {
+  color: #198754;
+  opacity: 0.6;
+}
+
+.search-input-middle:focus {
+  outline: none;
+}
+
+/* ===========================
+   4. Search Button (Right Piece)
+   Integrates into the bar without its own border.
+=========================== */
+.search-icon-right {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevents squishing */
+  width: 44px; /* Fixed width */
+  height: 44px; /* Fixed height */
+  padding: 0 10px;
+
+  /* Icon Color */
+  color: #198754; /* Green icon color */
+  font-size: 1.2rem;
+  background: transparent;
+
+  /* Hover effect: Orange highlight */
+  transition: color 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.search-icon-right:hover {
+  color: #ffa94d; /* Orange color on hover */
 }
 
 /* ===========================
@@ -374,6 +403,9 @@ section {
   background: #aa7108;
 }
 
+/* ===========================
+   Highlight Boxes Section (Statistics boxes)
+=========================== */
 /* Highlight Boxes attached visually */
 .highlight-boxes {
   background: transparent; /* no green rectangle */
@@ -801,34 +833,40 @@ section {
   z-index: 999;
 }
 
-/* Make anchors behave like your original boxes */
 .floating-icon-bar .icon-box {
-  background: #fff;
-  border-radius: 24px;
-  padding: 6px; /* small internal space without forcing width/height */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* FIX: Removed background, padding, and box-shadow */
+  background: transparent;
+  border-radius: 0;
+  padding: 0; /* REMOVE PADDING to allow image to fill */
+  box-shadow: none; /* REMOVE BOX SHADOW/HUE */
+  
+  /* Ensuring proper layout */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, background 0.3s ease;
-  text-decoration: none; /* prevent underline on <a> */
-  color: inherit; /* keep text colors consistent */
+  text-decoration: none;
+  color: inherit;
+  
+  /* Set a fixed size for the box if the image is square */
+  width: 44px; /* Example size, adjust as needed */
+  height: 44px; /* Example size, adjust as needed */
 }
 
 .floating-icon-bar .icon-box:hover {
-  background: #e6f5e6;
+  background: transparent; /* Ensure hover background is also gone */
   transform: translateX(-5px);
 }
 
-/* Icon image sizing (no forced object-fit that can cause artifacts) */
 .floating-icon-bar .icon-img {
+  /* FIX: Ensure image fills the container */
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 100%; /* IMAGE FILLS BOX WIDTH */
+  height: 100%; /* IMAGE FILLS BOX HEIGHT */
+  object-fit: contain; /* Ensures the whole image is visible */
 }
 
-/* Hover label (unchanged behavior) */
 .floating-icon-bar .icon-label {
   position: absolute;
   right: 100%;
@@ -847,18 +885,16 @@ section {
   opacity: 1;
 }
 
-/* --- Dropdown for last icon --- */
 .floating-icon-bar .has-dropdown {
   position: relative;
 }
 
-/* Dropdown box styling */
 .floating-icon-bar .icon-dropdown {
   position: absolute;
   top: 50%;
-  right: 110%; /* appears to the left of the icon */
+  right: 110%;
   transform: translateY(-50%);
-  background: #000; /* black background */
+  background: #000;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -872,25 +908,22 @@ section {
   z-index: 1000;
 }
 
-/* Show on hover */
 .floating-icon-bar .has-dropdown:hover .icon-dropdown {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Dropdown links */
 .floating-icon-bar .icon-dropdown a {
   font-size: 0.85rem;
-  color: #fff; /* white text */
+  color: #fff;
   text-decoration: none;
   padding: 6px 8px;
   border-radius: 6px;
   transition: background 0.15s ease;
 }
 
-/* Hover effect for links */
 .floating-icon-bar .icon-dropdown a:hover {
-  background: #333; /* dark grey highlight on hover */
+  background: #333;
 }
 
 /* ===========================
@@ -1091,7 +1124,7 @@ section {
 }
 
 /* ===========================
-   Index 2 start    ----------------------------------------------------------------------------
+   Index 2 start    ----------------------------------------------------------------------------
    =========================== */
 
 /* Banner */
@@ -1132,7 +1165,7 @@ section {
 .platform-toggle {
   width: 100%;
   padding: 12px 16px;
-  background-color: #2b6e2b;
+  background-color: #e0e0e0;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -1143,9 +1176,22 @@ section {
   justify-content: space-between;
 }
 
+/* ===========================
+   Platform Toggle Icon Styling
+=========================== */
+.platform-toggle .dropdown-icon {
+  width: 32px; /* Larger icon inside toggle */
+  height: 32px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+/* ===========================
+   Dropdown Menu Styling
+=========================== */
 .dropdown-up {
   position: absolute;
-  bottom: 100%;
+  bottom: calc(100% + 6px);
   left: 0;
   width: 100%;
   background-color: #fff;
@@ -1153,31 +1199,52 @@ section {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   display: none;
   flex-direction: column;
-  padding: 10px;
-  z-index: 10;
+  padding: 8px;
+  gap: 6px;
+  z-index: 1001;
 }
 
+/* ===========================
+   Dropdown Buttons
+=========================== */
 .dropdown-box {
-  padding: 12px;
-  margin-bottom: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
   background-color: #d9f2d9;
   border: none;
-  border-radius: 10px;
-  text-align: center;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 10px;
 }
+
+.dropdown-box img {
+  flex-shrink: 0;           /* Prevent shrinking */
+  width: 100px;              /* Bigger and consistent */
+  height: 100px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+
 .dropdown-box:hover {
   background-color: #c8eec8;
 }
 
-/* Menu buttons */
+/* ===========================
+   Menu Buttons
+=========================== */
 .menu-buttons {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .menu-btn {
   display: block;
   padding: 12px 16px;
@@ -1189,17 +1256,21 @@ section {
   font-weight: 500;
   transition: background 0.2s ease;
 }
+
 .menu-btn:hover {
   background-color: #f5f5f5;
 }
 
-/* Right visuals */
+/* ===========================
+   Right Visuals
+=========================== */
 .right-visuals {
   width: 70%;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
+
 .visual-placeholder {
   width: 100%;
   height: 400px;
@@ -1211,10 +1282,48 @@ section {
   justify-content: center;
   font-size: 1.1rem;
   color: #777;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Defensive: ensure nothing overlays the toggle */
-.platform-toggle,
-.dropdown-up {
-  pointer-events: auto;
+/* Fancy heading inside placeholder */
+.visual-placeholder h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #198754;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffa94d, #ff7f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+
+.visual-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+/* ===========================
+   Platform Label Styling
+=========================== */
+.platform-toggle .platform-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-left: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.platform-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
 }

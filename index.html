@@ -36,20 +36,28 @@
             </div>
           </div>
 
-          <!-- Center: Search bar -->
-          <div class="search-bar">
+         <!-- Center: Search bar - UPDATED STRUCTURE FOR SEAMLESS STYLING -->
+          <div class="search-composite">
+            <!-- Location Icon (LEFT SIDE) -->
+            <a href="[Your_Location_Link_Here]" class="search-icon-left" title="Location">
+                <i class="bi bi-geo-alt-fill"></i>
+            </a>
+
+            <!-- Input Field (MIDDLE) -->
             <input
               type="search"
-              class="form-control modern-search"
+              class="form-control search-input-middle"
               placeholder="Search.."
             />
-            <button class="search-btn" type="button">
+
+            <!-- Search Button (RIGHT SIDE) -->
+            <button class="search-icon-right" type="button" title="Search">
               <i class="bi bi-search"></i>
             </button>
           </div>
 
           <!-- Right: BO Account + Language toggle -->
-          <div class="d-flex align-items-center gap-3 right-controls">
+          <div class="d-flex align-items-center gap-3">
             <a
               href="https://ibroker.lbsbd.com/Account/CreateBOAccount"
               target="_blank"
@@ -199,32 +207,29 @@
       <div class="swiper-pagination"></div>
     </section>
 
-    <!-- Highlight Boxes (separate section, visually attached) -->
+    <!-- Highlight Boxes (Statistics section with 3 boxes) -->
     <section class="highlight-boxes">
       <div class="container">
-        <div class="row g-3 justify-content-between">
-          <div class="col-12 col-sm-6 col-lg-3">
+        <div class="row g-4 justify-content-center">
+          <!-- Box 1: Years of Trust -->
+          <div class="col-12 col-sm-6 col-lg-4">
             <div class="float-box text-center">
               <div class="box-title">28</div>
               <div class="box-subtitle">Years of Trust</div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-3">
+          <!-- Box 2: Happy Clients -->
+          <div class="col-12 col-sm-6 col-lg-4">
             <div class="float-box text-center">
               <div class="box-title">68484</div>
-              <div class="box-subtitle">HAppy Clients</div>
+              <div class="box-subtitle">Happy Clients</div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-3">
+          <!-- Box 3: Branches, Extensions and Booths -->
+          <div class="col-12 col-sm-6 col-lg-4">
             <div class="float-box text-center">
               <div class="box-title">47</div>
               <div class="box-subtitle">Branches, Extensions and Booths</div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="float-box text-center">
-              <div class="box-title">Top Title</div>
-              <div class="box-subtitle">Bottom Subtitle</div>
             </div>
           </div>
         </div>
