@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initProdDeskSwiper();
   initArticleSwiper();
   initCounterAnimation();
+  initMenuInteraction();
 });
 
 /* ===========================
@@ -59,16 +60,16 @@ function initDropdown() {
   };
 
   const renderMenu = (key) => {
-    // Populates the menu button container with specific links
-    menuContainer.innerHTML = "";
-    (menuData[key] || []).forEach((item) => {
-      const a = document.createElement("a");
-      a.className = "menu-btn";
-      a.href = item.link;
-      a.textContent = item.label;
-      menuContainer.appendChild(a);
-    });
-  };
+  menuContainer.innerHTML = "";
+  (menuData[key] || []).forEach((item) => {
+    const btn = document.createElement("button");
+    btn.className = "menu-btn";
+    btn.textContent = item.label;
+    btn.dataset.label = item.label; // store label for interaction
+    menuContainer.appendChild(btn);
+  });
+};
+
 
   // --- Initial Load Logic (Executed on page load, especially index-2.html) ---
   if (selectedPlatform && menuData[selectedPlatform]) {
@@ -300,4 +301,172 @@ function initCounterAnimation() {
 
   // Start the animation
   window.requestAnimationFrame(animateCount);
+}
+
+/* ===========================
+   Menu Button Arc + Bounce + Highlight
+=========================== */
+function initMenuInteraction() {
+  const menuContainer = document.getElementById("menuButtons");
+  const rightPanel = document.querySelector(".right-visuals");
+
+  if (!menuContainer || !rightPanel) return;
+
+  const buttons = Array.from(menuContainer.children);
+  const buttonHeight = 60; // height + spacing
+
+  // Initial layout
+  buttons.forEach((btn, i) => {
+    btn.style.position = "absolute";
+    btn.style.top = `${i * buttonHeight}px`;
+    btn.style.transform = "translateX(0)";
+    btn.style.opacity = 1;
+  });
+
+  menuContainer.addEventListener("click", function (e) {
+    const clicked = e.target.closest(".menu-btn");
+    if (!clicked) return;
+
+    // Remove active class from all buttons
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    // Reorder array: move clicked to front
+    const newOrder = [clicked, ...buttons.filter(b => b !== clicked)];
+
+    // Animate each button to its new position
+    newOrder.forEach((btn, i) => {
+      btn.style.top = `${i * buttonHeight}px`;
+
+      if (btn === clicked) {
+        // Arc + bounce + highlight ONLY for the clicked button
+        btn.classList.add("active");
+        btn.style.transform = "translateX(-25px)";
+        btn.style.opacity = 0.9;
+
+        setTimeout(() => {
+          btn.style.transform = "translateX(0)";
+          btn.style.opacity = 1;
+        }, 700); // match transition duration
+      } else {
+        // Other buttons just slide vertically
+        btn.style.transform = "translateX(0)";
+        btn.style.opacity = 1;
+      }
+    });
+
+    // Right panel fade swap
+    rightPanel.style.opacity = 0;
+    setTimeout(() => {
+      rightPanel.innerHTML = getVisualContent(clicked.textContent.trim());
+      rightPanel.style.opacity = 1;
+    }, 400);
+  });
+}
+
+
+
+
+
+
+
+/* ===========================
+   Right Panel Content Templates
+=========================== */
+function getVisualContent(label) {
+  switch (label) {
+    case "Fund Transfer":
+      return `
+        <div class="visual-placeholder">
+          <div class="tab-bar">
+            <button class="tab-btn">Fund Deposit</button>
+            <button class="tab-btn">Fund Withdrawal</button>
+            <button class="tab-btn">Videos</button>
+          </div>
+          <div class="tab-content">
+            <p>Interactive Fund Transfer screen with deposit/withdrawal options.</p>
+          </div>
+        </div>
+      `;
+
+    case "TradeXpress":
+      return `
+        <div class="visual-placeholder">
+          <div class="tab-bar">
+            <button class="tab-btn">Market</button>
+            <button class="tab-btn">Orders</button>
+            <button class="tab-btn">Portfolio</button>
+          </div>
+          <div class="tab-content">
+            <p>Live trading interface with charts and order book.</p>
+          </div>
+        </div>
+      `;
+
+    case "Investment Certificate":
+      return `
+        <div class="visual-placeholder">
+          <h2>Investment Certificate</h2>
+          <p>Static panel showing certificate details and download options.</p>
+        </div>
+      `;
+
+    case "Portfolio":
+      return `
+        <div class="visual-placeholder">
+          <div class="tab-bar">
+            <button class="tab-btn">Holdings</button>
+            <button class="tab-btn">Performance</button>
+          </div>
+          <div class="tab-content">
+            <p>Interactive portfolio dashboard with charts and metrics.</p>
+          </div>
+        </div>
+      `;
+
+    case "Ledger Reports":
+      return `
+        <div class="visual-placeholder">
+          <h2>Ledger Reports</h2>
+          <p>Static panel with downloadable PDF/Excel reports.</p>
+        </div>
+      `;
+
+    case "Trade Confirmation":
+      return `
+        <div class="visual-placeholder">
+          <h2>Trade Confirmation</h2>
+          <p>Static panel showing confirmation slips and transaction history.</p>
+        </div>
+      `;
+
+    case "IPO Application":
+      return `
+        <div class="visual-placeholder">
+          <div class="tab-bar">
+            <button class="tab-btn">Step 1</button>
+            <button class="tab-btn">Step 2</button>
+            <button class="tab-btn">Step 3</button>
+            <button class="tab-btn">Step 4</button>
+          </div>
+          <div class="tab-content">
+            <p>Interactive IPO application guide with eligibility and steps.</p>
+          </div>
+        </div>
+      `;
+
+    case "Online BO A/C":
+      return `
+        <div class="visual-placeholder">
+          <h2>Online BO Account</h2>
+          <p>Static panel with account creation form and instructions.</p>
+        </div>
+      `;
+
+    default:
+      return `
+        <div class="visual-placeholder">
+          <p>Content for ${label} will appear here.</p>
+        </div>
+      `;
+  }
 }
